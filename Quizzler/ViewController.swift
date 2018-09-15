@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let allQuestions = QuestionBank()
+    
     //Place your instance variables here
     
     
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstQuestion = allQuestions.list[0]
         
     }
 
