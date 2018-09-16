@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         checkAnswer()
         
         questionNumber = questionNumber + 1
-        questionLabel.text = allQuestions.list[questionNumber].questionText
+        nextQuestion()
   
     }
     
