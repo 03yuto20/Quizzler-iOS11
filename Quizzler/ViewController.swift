@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
+        
+        questionNumber = questionNumber + 1
+        questionLabel.text = allQuestions.list[questionNumber].questionText
   
     }
     
@@ -57,7 +60,7 @@ class ViewController: UIViewController {
     
     func checkAnswer() {
         
-        let correctAnswer = allQuestions.list[0].answer
+        let correctAnswer = allQuestions.list[questionNumber].answer
         
         if correctAnswer == pickedAnswer {
             print("You got it!")
