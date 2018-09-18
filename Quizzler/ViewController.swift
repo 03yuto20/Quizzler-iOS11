@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
     var questionNumber: Int = 0
+    var score: Int = 0
     
     //Place your instance variables here
     
@@ -49,7 +50,12 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
-      
+        
+        scoreLabel.text = "Score: \(score)"
+        progressLabel.text = "\(questionNumber) / 13"
+        
+        progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber)
+        
     }
     
 
@@ -57,6 +63,9 @@ class ViewController: UIViewController {
         
         if questionNumber <= 12 {
             questionLabel.text = allQuestions.list[questionNumber].questionText
+            
+            updateUI()
+            
         }
         else {
             
@@ -81,6 +90,8 @@ class ViewController: UIViewController {
         
         if correctAnswer == pickedAnswer {
             print("You got it!")
+            score += 1
+            
         }
         else {
             print("wrong")
